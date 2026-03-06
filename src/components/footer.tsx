@@ -4,11 +4,11 @@ import { getVersion } from "@/lib/version";
 export function Footer({ dict }: { dict: Dictionary }) {
   const version = getVersion();
   return (
-    <footer className="border-t border-slate-200 py-8 px-6">
-      <div className="max-w-6xl mx-auto text-center text-sm text-slate-500">
+    <footer className="border-t border-white/10 py-8 px-6">
+      <div className="max-w-7xl mx-auto text-center text-sm text-white/40">
         <div>&copy; {new Date().getFullYear()} {dict.metadata.title}. {dict.footer.rights}</div>
         {version !== "dev" && (
-          <div className="mt-2 text-xs text-slate-400" data-site-version>
+          <div className="mt-2 text-xs text-white/20" data-site-version>
             {version}
           </div>
         )}

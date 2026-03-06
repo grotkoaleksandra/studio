@@ -1,65 +1,81 @@
 {
   "metadata": {
-    "title": "My Organization",
-    "description": "Community management platform"
+    "title": "Studio",
+    "description": "Un studio cr\u00e9atif pour le cin\u00e9ma, le design et la narration visuelle"
   },
   "nav": {
-    "home": "Home",
-    "about": "About",
-    "programs": "Programs",
+    "home": "Accueil",
+    "about": "\u00c0 propos",
+    "work": "Travaux",
     "contact": "Contact",
-    "signIn": "Sign In",
+    "signIn": "Connexion",
     "intranet": "Intranet"
   },
   "home": {
     "hero": {
-      "title": "Welcome",
-      "subtitle": "Building community, empowering futures",
-      "cta": "Learn More"
+      "title": "Des histoires qui \u00e9meuvent.",
+      "subtitle": "Nous cr\u00e9ons des r\u00e9cits visuels pour les marques qui refusent de se fondre dans la masse.",
+      "cta": "Voir nos travaux"
     },
-    "mission": {
-      "title": "Our Mission",
-      "description": "We are dedicated to serving our community, supporting education, and strengthening bonds across generations."
+    "projects": {
+      "title": "Travaux s\u00e9lectionn\u00e9s",
+      "viewAll": "Voir tous les projets",
+      "items": [
+        { "title": "Meridian", "category": "Cin\u00e9ma", "year": "2025" },
+        { "title": "Undertow", "category": "Marque", "year": "2025" },
+        { "title": "Glass Fauna", "category": "\u00c9ditorial", "year": "2024" },
+        { "title": "Silent Frequency", "category": "Cin\u00e9ma", "year": "2024" },
+        { "title": "Vessel", "category": "Campagne", "year": "2024" },
+        { "title": "Nocturne", "category": "Marque", "year": "2023" }
+      ]
+    },
+    "philosophy": {
+      "title": "Philosophie",
+      "description": "Nous croyons au poids de la retenue. Chaque image, chaque mot, chaque pixel existe parce qu\u2019il le doit. Notre travail vit \u00e0 l\u2019intersection de l\u2019art et de l\u2019intention."
+    },
+    "contact": {
+      "heading": "Cr\u00e9ons quelque chose ensemble.",
+      "cta": "Nous contacter"
     }
   },
   "about": {
-    "title": "About Us",
-    "description": "Learn about our history, mission, and the community we serve.",
+    "title": "\u00c0 propos",
+    "description": "Un collectif de r\u00e9alisateurs, designers et conteurs bas\u00e9 \u00e0 New York.",
     "history": {
-      "title": "Our History",
-      "content": "Our organization has a rich history of community service. We work to maintain traditions while embracing the future."
+      "title": "Notre histoire",
+      "content": "Fond\u00e9 sur la conviction que la retenue est une forme d\u2019expression, Studio a pass\u00e9 plus d\u2019une d\u00e9cennie \u00e0 cr\u00e9er des \u0153uvres qui parlent par la simplicit\u00e9."
     }
   },
   "programs": {
-    "title": "Our Programs",
-    "description": "Explore the programs and initiatives we offer to our community.",
+    "title": "Travaux",
+    "description": "Projets s\u00e9lectionn\u00e9s en cin\u00e9ma, marque, \u00e9ditorial et campagne.",
     "list": [
       {
-        "title": "Community Programs",
-        "description": "Programs dedicated to serving and strengthening our community."
+        "title": "Cin\u00e9ma et mouvement",
+        "description": "R\u00e9alisation narrative et documentaire, du concept au montage final."
       },
       {
-        "title": "Education",
-        "description": "Educational initiatives supporting youth and lifelong learning."
+        "title": "Identit\u00e9 de marque",
+        "description": "Syst\u00e8mes visuels qui distillent une marque jusqu\u2019\u00e0 sa v\u00e9rit\u00e9 essentielle."
       },
       {
-        "title": "Community Support",
-        "description": "Resources and services that strengthen our community bonds."
+        "title": "\u00c9ditorial et campagne",
+        "description": "Direction artistique et production pour l\u2019imprim\u00e9, le num\u00e9rique et au-del\u00e0."
       }
     ]
   },
   "contact": {
-    "title": "Contact Us",
-    "description": "Get in touch with us. We'd love to hear from you.",
+    "title": "Contact",
+    "description": "Int\u00e9ress\u00e9 par une collaboration ? Nous serions ravis de vous entendre.",
     "form": {
-      "name": "Your Name",
-      "email": "Your Email",
-      "message": "Your Message",
-      "submit": "Send Message"
+      "name": "Nom",
+      "email": "Email",
+      "message": "Parlez-nous de votre projet",
+      "submit": "Envoyer"
     }
   },
   "footer": {
-    "rights": "All rights reserved.",
-    "language": "Language"
+    "rights": "Tous droits r\u00e9serv\u00e9s.",
+    "language": "Langue"
   }
 }

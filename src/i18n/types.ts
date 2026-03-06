@@ -6,7 +6,7 @@ export interface Dictionary {
   nav: {
     home: string;
     about: string;
-    programs: string;
+    work: string;
     contact: string;
     signIn: string;
     intranet: string;
@@ -17,9 +17,22 @@ export interface Dictionary {
       subtitle: string;
       cta: string;
     };
-    mission: {
+    projects: {
+      title: string;
+      viewAll: string;
+      items: {
+        title: string;
+        category: string;
+        year: string;
+      }[];
+    };
+    philosophy: {
       title: string;
       description: string;
+    };
+    contact: {
+      heading: string;
+      cta: string;
     };
   };
   about: {
