@@ -1,9 +1,9 @@
 {
-  "version": "v260306.04 8:35am",
-  "release": 4,
-  "sha": "175ca42",
-  "fullSha": "175ca42ef8e5a0f3533ec1575a6b979ecb567b56",
+  "version": "v260306.05 9:06am",
+  "release": 5,
+  "sha": "89a3899",
+  "fullSha": "89a3899863de176440aa3858be7fb749694b2305",
   "actor": "grotkoaleksandra",
-  "pushedAt": "2026-03-06T14:35:50Z",
-  "commits": [{"sha": "175ca42", "message": "Add Resend email integration with edge function", "author": "MICHAEL KARNOW"}]
+  "pushedAt": "2026-03-06T15:06:08Z",
+  "commits": [{"sha": "89a3899", "message": "Redesign landing page with A24-inspired dark aesthetic", "author": "MICHAEL KARNOW"}]
 }
