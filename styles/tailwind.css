@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+/* Scan static HTML and JS files for class usage */
+@source "../index.html";
+@source "../shared/**/*.js";
+@source "../shared/**/*.html";
+@source "../admin/**/*.html";
+@source "../admin/**/*.js";
+
+/* Map project design tokens to Tailwind theme */
+@theme {
+  --color-accent: #7B1A2C;
+  --color-accent-deep: #5A0F1E;
+  --color-accent-light: #9E2B3F;
+  --color-gold: #D4A843;
+  --color-gold-dim: #B8923A;
+  --color-surface: #FFFFFF;
+  --color-surface-warm: #FFFDF9;
+  --color-bg: #FBF8F1;
+  --color-bg-warm: #F5EFE2;
+  --color-text-primary: #2A1F1A;
+  --color-text-soft: #5C4A3E;
+  --color-text-dim: #8A7668;
+  --color-text-muted: #B0A090;
+  --color-border: #E8DFD0;
+  --color-border-light: #F0EAE0;
+  --radius-default: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+}
