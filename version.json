@@ -1,9 +1,9 @@
 {
-  "version": "v260306.03 8:31am",
-  "release": 3,
-  "sha": "73c9e77",
-  "fullSha": "73c9e779227ebf343ff539f8f1ff8d3f102cd3b4",
+  "version": "v260306.04 8:35am",
+  "release": 4,
+  "sha": "175ca42",
+  "fullSha": "175ca42ef8e5a0f3533ec1575a6b979ecb567b56",
   "actor": "grotkoaleksandra",
-  "pushedAt": "2026-03-06T14:31:46Z",
-  "commits": [{"sha": "73c9e77", "message": "Configure Supabase project with tables, storage, and RLS", "author": "MICHAEL KARNOW"}]
+  "pushedAt": "2026-03-06T14:35:50Z",
+  "commits": [{"sha": "175ca42", "message": "Add Resend email integration with edge function", "author": "MICHAEL KARNOW"}]
 }
