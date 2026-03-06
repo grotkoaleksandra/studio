@@ -19,15 +19,7 @@
     },
     "projects": {
       "title": "Selected Work",
-      "viewAll": "View All Projects",
-      "items": [
-        { "title": "Meridian", "category": "Film", "year": "2025" },
-        { "title": "Undertow", "category": "Branding", "year": "2025" },
-        { "title": "Glass Fauna", "category": "Editorial", "year": "2024" },
-        { "title": "Silent Frequency", "category": "Film", "year": "2024" },
-        { "title": "Vessel", "category": "Campaign", "year": "2024" },
-        { "title": "Nocturne", "category": "Branding", "year": "2023" }
-      ]
+      "viewAll": "View All Projects"
     },
     "philosophy": {
       "title": "Philosophy",

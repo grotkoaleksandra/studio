@@ -19,15 +19,7 @@
     },
     "projects": {
       "title": "Trabajo seleccionado",
-      "viewAll": "Ver todos los proyectos",
-      "items": [
-        { "title": "Meridian", "category": "Cine", "year": "2025" },
-        { "title": "Undertow", "category": "Marca", "year": "2025" },
-        { "title": "Glass Fauna", "category": "Editorial", "year": "2024" },
-        { "title": "Silent Frequency", "category": "Cine", "year": "2024" },
-        { "title": "Vessel", "category": "Campa\u00f1a", "year": "2024" },
-        { "title": "Nocturne", "category": "Marca", "year": "2023" }
-      ]
+      "viewAll": "Ver todos los proyectos"
     },
     "philosophy": {
       "title": "Filosof\u00eda",

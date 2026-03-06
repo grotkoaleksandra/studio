@@ -20,11 +20,6 @@ export interface Dictionary {
     projects: {
       title: string;
       viewAll: string;
-      items: {
-        title: string;
-        category: string;
-        year: string;
-      }[];
     };
     philosophy: {
       title: string;
