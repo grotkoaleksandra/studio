@@ -1,0 +1,73 @@
+{
+  "metadata": {
+    "title": "Studio",
+    "description": "Kreatywne studio filmowe, projektowe i wizualnej narracji"
+  },
+  "nav": {
+    "home": "Strona główna",
+    "about": "O nas",
+    "work": "Prace",
+    "contact": "Kontakt",
+    "signIn": "Zaloguj się",
+    "intranet": "Intranet"
+  },
+  "home": {
+    "hero": {
+      "title": "Historie, które poruszają.",
+      "subtitle": "Tworzymy wizualne narracje dla marek, które odmawiają wtapiania się w tłum.",
+      "cta": "Zobacz nasze prace"
+    },
+    "projects": {
+      "title": "Wybrane prace",
+      "viewAll": "Zobacz wszystkie projekty"
+    },
+    "philosophy": {
+      "title": "Filozofia",
+      "description": "Wierzymy w siłę powściągliwości. Każda klatka, każde słowo, każdy piksel istnieje, bo musi. Nasza praca żyje na styku sztuki i intencji."
+    },
+    "contact": {
+      "heading": "Stwórzmy coś razem.",
+      "cta": "Skontaktuj się"
+    }
+  },
+  "about": {
+    "title": "O nas",
+    "description": "Kolektyw reżyserów, projektantów i narratorów z siedzibą w Nowym Jorku.",
+    "history": {
+      "title": "Nasza historia",
+      "content": "Założone na przekonaniu, że powściągliwość jest formą wyrazu, Studio od ponad dekady tworzy prace, które przemawiają prostotą."
+    }
+  },
+  "programs": {
+    "title": "Prace",
+    "description": "Wybrane projekty z dziedziny filmu, brandingu, edytorstwa i kampanii.",
+    "list": [
+      {
+        "title": "Film i ruch",
+        "description": "Filmowanie narracyjne i dokumentalne, od koncepcji po montaż końcowy."
+      },
+      {
+        "title": "Identyfikacja marki",
+        "description": "Systemy wizualne, które destylują markę do jej istoty."
+      },
+      {
+        "title": "Edytorstwo i kampanie",
+        "description": "Kierownictwo artystyczne i produkcja dla druku, cyfrowych mediów i nie tylko."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Kontakt",
+    "description": "Zainteresowany współpracą? Chętnie od Ciebie usłyszymy.",
+    "form": {
+      "name": "Imię",
+      "email": "Email",
+      "message": "Opowiedz nam o swoim projekcie",
+      "submit": "Wyślij"
+    }
+  },
+  "footer": {
+    "rights": "Wszelkie prawa zastrzeżone.",
+    "language": "Język"
+  }
+}
