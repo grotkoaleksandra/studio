@@ -1,6 +1,7 @@
 import { getDictionary } from "@/i18n/get-dictionary";
 import type { Locale } from "@/i18n/config";
 import Link from "next/link";
+import { ProjectIndex } from "@/components/project-index";
 
 const PROJECT_IMAGES: string[] = [
   "https://picsum.photos/seed/meridian/1200/675",
@@ -10,6 +11,10 @@ const PROJECT_IMAGES: string[] = [
   "https://picsum.photos/seed/vessel/800/450",
   "https://picsum.photos/seed/nocturne/800/450",
 ];
+
+function slugify(title: string) {
+  return title.toLowerCase().replace(/\s+/g, "-");
+}
 
 export default async function HomePage({
   params,
@@ -44,7 +49,7 @@ export default async function HomePage({
       </section>
 
       {/* Selected Work */}
-      <section className="py-24 px-6">
+      <section id="work" className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between mb-16">
             <h2 className="text-xs uppercase tracking-[0.2em] text-muted">
@@ -63,6 +68,7 @@ export default async function HomePage({
             {projects.slice(0, 2).map((project, i) => (
               <Link
                 key={project.title}
+                id={`project-${slugify(project.title)}`}
                 href={`/${lang}/programs`}
                 className="group relative block overflow-hidden aspect-[21/9]"
               >
@@ -90,6 +96,7 @@ export default async function HomePage({
             {projects.slice(2).map((project, i) => (
               <Link
                 key={project.title}
+                id={`project-${slugify(project.title)}`}
                 href={`/${lang}/programs`}
                 className="group relative block overflow-hidden aspect-video"
               >
@@ -144,6 +151,9 @@ export default async function HomePage({
           </Link>
         </div>
       </section>
+
+      {/* Floating project index */}
+      <ProjectIndex projects={projects} />
     </>
   );
 }
