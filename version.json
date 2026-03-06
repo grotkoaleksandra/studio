@@ -1,9 +1,9 @@
 {
-  "version": "v260306.05 9:06am",
-  "release": 5,
-  "sha": "89a3899",
-  "fullSha": "89a3899863de176440aa3858be7fb749694b2305",
+  "version": "v260306.06 10:47am",
+  "release": 6,
+  "sha": "adf8184",
+  "fullSha": "adf81846984865e70b9a841136e4420e43ca97d6",
   "actor": "grotkoaleksandra",
-  "pushedAt": "2026-03-06T15:06:08Z",
-  "commits": [{"sha": "89a3899", "message": "Redesign landing page with A24-inspired dark aesthetic", "author": "MICHAEL KARNOW"}]
+  "pushedAt": "2026-03-06T16:47:03Z",
+  "commits": [{"sha": "adf8184", "message": "Add GitHub Actions deployment for Next.js static export", "author": "MICHAEL KARNOW"}]
 }
