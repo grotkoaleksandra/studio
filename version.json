@@ -1,9 +1,9 @@
 {
-  "version": "v260306.07 12:06pm",
-  "release": 7,
-  "sha": "cdcb75b",
-  "fullSha": "cdcb75b4c78934b3765582dfa6382943cea554dd",
+  "version": "v260306.08 3:17pm",
+  "release": 8,
+  "sha": "50c5f79",
+  "fullSha": "50c5f79f7c30d5ccf07f4f5712914bc634fba290",
   "actor": "grotkoaleksandra",
-  "pushedAt": "2026-03-06T18:06:55Z",
-  "commits": [{"sha": "cdcb75b", "message": "Add collapsible project index menu", "author": "MICHAEL KARNOW"}]
+  "pushedAt": "2026-03-06T21:17:44Z",
+  "commits": [{"sha": "50c5f79", "message": "Sandwich menu, Supabase projects, compact landing page", "author": "MICHAEL KARNOW"}]
 }
