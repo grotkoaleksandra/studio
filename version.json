@@ -1,9 +1,9 @@
 {
-  "version": "v260306.08 3:17pm",
-  "release": 8,
-  "sha": "50c5f79",
-  "fullSha": "50c5f79f7c30d5ccf07f4f5712914bc634fba290",
+  "version": "v260306.09 3:21pm",
+  "release": 9,
+  "sha": "53b7890",
+  "fullSha": "53b78903971a494a31479de81a9f8298a2221a9d",
   "actor": "grotkoaleksandra",
-  "pushedAt": "2026-03-06T21:17:44Z",
-  "commits": [{"sha": "50c5f79", "message": "Sandwich menu, Supabase projects, compact landing page", "author": "MICHAEL KARNOW"}]
+  "pushedAt": "2026-03-06T21:21:15Z",
+  "commits": [{"sha": "53b7890", "message": "Switch languages to English, Polish, and Russian", "author": "MICHAEL KARNOW"}]
 }
