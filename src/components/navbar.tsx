@@ -77,7 +77,6 @@ export function Navbar({ dict, lang }: { dict: Dictionary; lang: Locale }) {
   const scrollToProject = useCallback(
     (slug: string) => {
       setMenuOpen(false);
-      // Small delay to allow overlay to close
       setTimeout(() => {
         const el = document.getElementById(`project-${slug}`);
         if (el) {
@@ -111,7 +110,38 @@ export function Navbar({ dict, lang }: { dict: Dictionary; lang: Locale }) {
             : "bg-transparent"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
+        <div className="max-w-7xl mx-auto px-6 flex items-center h-16">
+          {/* Hamburger — left side, larger and bolder */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="relative z-10 p-2 -ml-2 mr-4 text-white hover:bg-white/10 rounded-md transition-colors"
+            aria-label="Toggle menu"
+          >
+            <svg
+              className="w-7 h-7"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              {menuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M3 6h18M3 12h18M3 18h18"
+                />
+              )}
+            </svg>
+          </button>
+
+          {/* Logo */}
           <Link
             href={`/${lang}`}
             className="text-lg font-medium tracking-wide text-white z-10"
@@ -119,8 +149,8 @@ export function Navbar({ dict, lang }: { dict: Dictionary; lang: Locale }) {
             {dict.metadata.title}
           </Link>
 
-          {/* Desktop nav links */}
-          <div className="hidden sm:flex items-center gap-8">
+          {/* Desktop nav links — pushed right */}
+          <div className="hidden sm:flex items-center gap-8 ml-auto">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -152,36 +182,6 @@ export function Navbar({ dict, lang }: { dict: Dictionary; lang: Locale }) {
                 </Link>
               ))}
           </div>
-
-          {/* Hamburger — always visible */}
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="relative z-10 p-2 text-white"
-            aria-label="Toggle menu"
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              {menuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              )}
-            </svg>
-          </button>
         </div>
       </nav>
 
