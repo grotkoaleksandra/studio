@@ -103,15 +103,29 @@ export function Navbar({ dict, lang }: { dict: Dictionary; lang: Locale }) {
       {/* A24-style sticky transparent header */}
       <nav className="fixed top-0 w-full z-50 bg-transparent">
         <div className="w-full px-6 sm:px-10 flex items-center justify-between h-16">
-          {/* Left — Menu trigger */}
+          {/* Left — Menu icon trigger */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="relative z-[60] flex items-center gap-2 text-white group"
+            className="relative z-[60] flex items-center text-white hover:opacity-70 transition-opacity"
             aria-label="Toggle menu"
           >
-            <span className="text-xs uppercase tracking-[0.15em] font-medium group-hover:opacity-70 transition-opacity">
-              {menuOpen ? "Close" : "Menu"}
-            </span>
+            <div className="w-7 h-5 flex flex-col justify-between">
+              <span
+                className={`block h-[2px] bg-white transition-all duration-300 origin-center ${
+                  menuOpen ? "rotate-45 translate-y-[9px]" : ""
+                }`}
+              />
+              <span
+                className={`block h-[2px] bg-white transition-all duration-300 ${
+                  menuOpen ? "opacity-0 scale-x-0" : ""
+                }`}
+              />
+              <span
+                className={`block h-[2px] bg-white transition-all duration-300 origin-center ${
+                  menuOpen ? "-rotate-45 -translate-y-[9px]" : ""
+                }`}
+              />
+            </div>
           </button>
 
           {/* Center — Logo */}
