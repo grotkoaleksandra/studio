@@ -46,7 +46,7 @@ export function Navbar({ dict, lang }: { dict: Dictionary; lang: Locale }) {
         const data = await res.json();
         if (Array.isArray(data)) setProjects(data);
       } catch {
-        // silently fail — menu just won't show project links
+        // silently fail
       }
     }
     fetchProjects();
@@ -74,19 +74,16 @@ export function Navbar({ dict, lang }: { dict: Dictionary; lang: Locale }) {
     };
   }, [menuOpen]);
 
-  const scrollToProject = useCallback(
-    (slug: string) => {
-      setMenuOpen(false);
-      setTimeout(() => {
-        const el = document.getElementById(`project-${slug}`);
-        if (el) {
-          const y = el.getBoundingClientRect().top + window.scrollY - 80;
-          window.scrollTo({ top: y, behavior: "smooth" });
-        }
-      }, 100);
-    },
-    []
-  );
+  const scrollToProject = useCallback((slug: string) => {
+    setMenuOpen(false);
+    setTimeout(() => {
+      const el = document.getElementById(`project-${slug}`);
+      if (el) {
+        const y = el.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }
+    }, 100);
+  }, []);
 
   if (pathname.includes("/intranet")) {
     return null;
@@ -103,107 +100,58 @@ export function Navbar({ dict, lang }: { dict: Dictionary; lang: Locale }) {
 
   return (
     <>
-      <nav
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-          scrolled || menuOpen
-            ? "bg-black/80 backdrop-blur-md"
-            : "bg-transparent"
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-6 flex items-center h-16">
-          {/* Hamburger — left side, larger and bolder */}
+      {/* A24-style sticky transparent header */}
+      <nav className="fixed top-0 w-full z-50 bg-transparent">
+        <div className="w-full px-6 sm:px-10 flex items-center justify-between h-16">
+          {/* Left — Menu trigger */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="relative z-10 p-2 -ml-2 mr-4 text-white hover:bg-white/10 rounded-md transition-colors"
+            className="relative z-[60] flex items-center gap-2 text-white group"
             aria-label="Toggle menu"
           >
-            <svg
-              className="w-7 h-7"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              {menuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 6h18M3 12h18M3 18h18"
-                />
-              )}
-            </svg>
+            <span className="text-xs uppercase tracking-[0.15em] font-medium group-hover:opacity-70 transition-opacity">
+              {menuOpen ? "Close" : "Menu"}
+            </span>
           </button>
 
-          {/* Logo */}
+          {/* Center — Logo */}
           <Link
             href={`/${lang}`}
-            className="text-lg font-medium tracking-wide text-white z-10"
+            className="absolute left-1/2 -translate-x-1/2 text-xl font-semibold tracking-widest uppercase text-white z-[60]"
           >
             {dict.metadata.title}
           </Link>
 
-          {/* Desktop nav links — pushed right */}
-          <div className="hidden sm:flex items-center gap-8 ml-auto">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`text-sm tracking-wide transition-opacity ${
-                  pathname === link.href
-                    ? "text-white"
-                    : "text-white/50 hover:text-white"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
+          {/* Right — Language */}
+          <div className="relative z-[60]">
             <LanguageSwitcher lang={lang} />
-            {!loading &&
-              (user ? (
-                <Link
-                  href={`/${intranetLang}/intranet`}
-                  className="text-sm px-4 py-1.5 border border-white/30 text-white hover:bg-white hover:text-black transition-all rounded"
-                >
-                  {dict.nav.intranet}
-                </Link>
-              ) : (
-                <Link
-                  href={`/${intranetLang}/signin`}
-                  className="text-sm px-4 py-1.5 border border-white/30 text-white hover:bg-white hover:text-black transition-all rounded"
-                >
-                  {dict.nav.signIn}
-                </Link>
-              ))}
           </div>
         </div>
       </nav>
 
       {/* Full-screen overlay menu */}
       <div
-        className={`fixed inset-0 z-40 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+        className={`fixed inset-0 z-40 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
           menuOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
         }`}
       >
-        <div className="absolute inset-0 bg-black/95 backdrop-blur-xl" />
+        <div
+          className={`absolute inset-0 bg-black transition-all duration-700 ${
+            menuOpen ? "opacity-100" : "opacity-0"
+          }`}
+        />
 
-        <div className="relative z-10 h-full overflow-y-auto pt-24 pb-12 px-6">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-12 sm:gap-16">
+        <div className="relative z-10 h-full overflow-y-auto pt-24 pb-12 px-6 sm:px-10">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-16 sm:gap-24">
             {/* Left column — Projects */}
             {projects.length > 0 && (
               <div>
-                <p className="text-[10px] uppercase tracking-[0.25em] text-white/30 mb-6">
+                <p className="text-[11px] uppercase tracking-[0.2em] text-white/40 mb-8">
                   Projects
                 </p>
-                <div className="space-y-1">
+                <div className="space-y-0">
                   {projects.map((project, i) => (
                     <button
                       key={project.id}
@@ -212,15 +160,15 @@ export function Navbar({ dict, lang }: { dict: Dictionary; lang: Locale }) {
                           ? () => scrollToProject(project.slug)
                           : undefined
                       }
-                      className="w-full text-left group flex items-baseline gap-4 py-2 hover:pl-2 transition-all duration-200"
+                      className="w-full text-left group flex items-baseline gap-5 py-3 border-b border-white/5 hover:border-white/20 transition-all duration-300"
                     >
-                      <span className="text-[10px] text-white/20 font-mono tabular-nums">
+                      <span className="text-[11px] text-white/25 font-mono tabular-nums">
                         {String(i + 1).padStart(2, "0")}
                       </span>
-                      <span className="text-lg sm:text-xl text-white/60 group-hover:text-white transition-colors duration-200 font-light">
+                      <span className="text-2xl sm:text-3xl text-white/70 group-hover:text-white transition-colors duration-300 font-light tracking-tight">
                         {project.title}
                       </span>
-                      <span className="text-[10px] text-white/20 ml-auto">
+                      <span className="text-[11px] text-white/25 ml-auto uppercase tracking-wider">
                         {project.category}
                       </span>
                     </button>
@@ -231,19 +179,19 @@ export function Navbar({ dict, lang }: { dict: Dictionary; lang: Locale }) {
 
             {/* Right column — Navigation + auth */}
             <div>
-              <p className="text-[10px] uppercase tracking-[0.25em] text-white/30 mb-6">
+              <p className="text-[11px] uppercase tracking-[0.2em] text-white/40 mb-8">
                 Navigation
               </p>
-              <div className="space-y-1">
+              <div className="space-y-0">
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
                     onClick={() => setMenuOpen(false)}
-                    className={`block text-lg sm:text-xl font-light py-2 transition-colors duration-200 ${
+                    className={`block text-2xl sm:text-3xl font-light tracking-tight py-3 border-b border-white/5 transition-all duration-300 ${
                       pathname === link.href
                         ? "text-white"
-                        : "text-white/60 hover:text-white"
+                        : "text-white/70 hover:text-white hover:border-white/20"
                     }`}
                   >
                     {link.label}
@@ -251,15 +199,14 @@ export function Navbar({ dict, lang }: { dict: Dictionary; lang: Locale }) {
                 ))}
               </div>
 
-              <div className="mt-8 pt-6 border-t border-white/10 space-y-4">
-                <LanguageSwitcher lang={lang} />
+              <div className="mt-12 pt-8 border-t border-white/10">
                 {!loading && (
                   <div>
                     {user ? (
                       <Link
                         href={`/${intranetLang}/intranet`}
                         onClick={() => setMenuOpen(false)}
-                        className="text-sm text-white/40 hover:text-white transition-colors"
+                        className="text-sm text-white/40 hover:text-white transition-colors uppercase tracking-wider"
                       >
                         {dict.nav.intranet}
                       </Link>
@@ -267,7 +214,7 @@ export function Navbar({ dict, lang }: { dict: Dictionary; lang: Locale }) {
                       <Link
                         href={`/${intranetLang}/signin`}
                         onClick={() => setMenuOpen(false)}
-                        className="text-sm text-white/40 hover:text-white transition-colors"
+                        className="text-sm text-white/40 hover:text-white transition-colors uppercase tracking-wider"
                       >
                         {dict.nav.signIn}
                       </Link>
