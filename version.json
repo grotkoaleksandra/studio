@@ -1,9 +1,9 @@
 {
-  "version": "v260306.09 3:21pm",
-  "release": 9,
-  "sha": "53b7890",
-  "fullSha": "53b78903971a494a31479de81a9f8298a2221a9d",
+  "version": "v260307.01 1:27pm",
+  "release": 1,
+  "sha": "026d52c",
+  "fullSha": "026d52c6784a11c1a3ad2853feaf064f5b78443b",
   "actor": "grotkoaleksandra",
-  "pushedAt": "2026-03-06T21:21:15Z",
-  "commits": [{"sha": "53b7890", "message": "Switch languages to English, Polish, and Russian", "author": "MICHAEL KARNOW"}]
+  "pushedAt": "2026-03-07T19:27:06Z",
+  "commits": [{"sha": "026d52c", "message": "Move hamburger menu to left side and make it more visible", "author": "MICHAEL KARNOW"}]
 }
