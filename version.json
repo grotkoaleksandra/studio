@@ -1,9 +1,9 @@
 {
-  "version": "v260307.01 1:27pm",
-  "release": 1,
-  "sha": "026d52c",
-  "fullSha": "026d52c6784a11c1a3ad2853feaf064f5b78443b",
+  "version": "v260307.02 4:12pm",
+  "release": 2,
+  "sha": "66306c0",
+  "fullSha": "66306c08a158d2f14ab85af297aaad0ef26753da",
   "actor": "grotkoaleksandra",
-  "pushedAt": "2026-03-07T19:27:06Z",
-  "commits": [{"sha": "026d52c", "message": "Move hamburger menu to left side and make it more visible", "author": "MICHAEL KARNOW"}]
+  "pushedAt": "2026-03-07T22:12:31Z",
+  "commits": [{"sha": "66306c0", "message": "A24-style sticky transparent header", "author": "MICHAEL KARNOW"}]
 }
