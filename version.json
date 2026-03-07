@@ -1,9 +1,9 @@
 {
-  "version": "v260307.02 4:12pm",
-  "release": 2,
-  "sha": "66306c0",
-  "fullSha": "66306c08a158d2f14ab85af297aaad0ef26753da",
+  "version": "v260307.03 5:06pm",
+  "release": 3,
+  "sha": "d7b2773",
+  "fullSha": "d7b27736f0ec4e92cc29c567dcf2d21b49860c15",
   "actor": "grotkoaleksandra",
-  "pushedAt": "2026-03-07T22:12:31Z",
-  "commits": [{"sha": "66306c0", "message": "A24-style sticky transparent header", "author": "MICHAEL KARNOW"}]
+  "pushedAt": "2026-03-07T23:06:23Z",
+  "commits": [{"sha": "d7b2773", "message": "Rename to Syrena Studio, replace Menu text with hamburger icon", "author": "MICHAEL KARNOW"}]
 }
