@@ -1,9 +1,9 @@
 {
-  "version": "v260310.01 9:34am",
+  "version": "v260312.01 12:34pm",
   "release": 1,
-  "sha": "bbb78c9",
-  "fullSha": "bbb78c94ebd2e708bbb825235276dffb229b6c53",
+  "sha": "c589036",
+  "fullSha": "c5890361446a134a5eeef848ce67670569626929",
   "actor": "grotkoaleksandra",
-  "pushedAt": "2026-03-10T14:34:56Z",
-  "commits": [{"sha": "bbb78c9", "message": "Trigger rebuild to pick up current projects from database", "author": "MICHAEL KARNOW"}]
+  "pushedAt": "2026-03-12T17:34:14Z",
+  "commits": [{"sha": "c589036", "message": "Brutalist redesign with Doto dot-matrix font", "author": "MICHAEL KARNOW"}]
 }
