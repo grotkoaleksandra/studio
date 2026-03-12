@@ -28,10 +28,6 @@ async function getProjects(): Promise<Project[]> {
   return (data as Project[]) || [];
 }
 
-function slugify(title: string) {
-  return title.toLowerCase().replace(/\s+/g, "-");
-}
-
 export default async function HomePage({
   params,
 }: {
@@ -47,7 +43,7 @@ export default async function HomePage({
 
   return (
     <>
-      {/* Hero — compact, image background */}
+      {/* Hero — brutalist, hard black bar over image */}
       <section className="relative h-[60vh] min-h-[400px] flex items-end">
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -55,55 +51,55 @@ export default async function HomePage({
             backgroundImage: `url(https://picsum.photos/seed/hero-studio/1920/1080)`,
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
-        <div className="relative z-10 max-w-7xl mx-auto w-full px-6 pb-16">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light tracking-tight text-white">
-            {dict.home.hero.title}
-          </h1>
-          <p className="mt-3 text-base sm:text-lg text-white/50 max-w-lg">
-            {dict.home.hero.subtitle}
-          </p>
+        <div className="absolute bottom-0 left-0 right-0 bg-black py-8 px-6">
+          <div className="max-w-7xl mx-auto">
+            <h1 className="text-5xl sm:text-7xl lg:text-9xl font-black uppercase tracking-tight text-white leading-none">
+              {dict.home.hero.title}
+            </h1>
+            <p className="mt-4 text-lg sm:text-xl text-white font-bold uppercase tracking-widest">
+              {dict.home.hero.subtitle}
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Selected Work */}
       <section id="work" className="py-12 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-between mb-10">
-            <h2 className="text-xs uppercase tracking-[0.2em] text-muted">
+          <div className="flex items-center justify-between mb-10 border-b-4 border-black pb-4">
+            <h2 className="text-xl uppercase tracking-[0.3em] text-black font-black">
               {dict.home.projects.title}
             </h2>
             <Link
               href={`/${lang}/programs`}
-              className="text-xs uppercase tracking-[0.2em] text-muted hover:text-foreground transition-colors"
+              className="text-base uppercase tracking-[0.2em] text-black hover:text-accent font-bold border-b-2 border-black hover:border-accent"
             >
               {dict.home.projects.viewAll} &rarr;
             </Link>
           </div>
 
-          {/* Featured projects — full width */}
-          <div className="space-y-3">
+          {/* Featured projects — full width, thick borders */}
+          <div className="space-y-0">
             {featured.map((project, i) => (
               <Link
                 key={project.id}
                 id={`project-${project.slug}`}
                 href={`/${lang}/programs`}
-                className="group relative block overflow-hidden aspect-[2/1]"
+                className="group relative block overflow-hidden aspect-[2/1] border-4 border-black"
               >
                 {project.cover_image_url && (
                   <img
                     src={project.cover_image_url}
                     alt={project.title}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                    className="absolute inset-0 w-full h-full object-cover group-hover:opacity-50"
                     loading={i === 0 ? "eager" : "lazy"}
                   />
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                <div className="absolute bottom-0 left-0 p-5 sm:p-6">
-                  <h3 className="text-xl sm:text-2xl font-light text-white">
+                <div className="absolute bottom-0 left-0 right-0 bg-black p-4 sm:p-6">
+                  <h3 className="text-2xl sm:text-3xl font-black text-white uppercase">
                     {project.title}
                   </h3>
-                  <p className="mt-1 text-xs text-white/40">
+                  <p className="mt-1 text-sm text-accent font-bold uppercase tracking-widest">
                     {project.category}
                   </p>
                 </div>
@@ -111,30 +107,29 @@ export default async function HomePage({
             ))}
           </div>
 
-          {/* Remaining projects — 2-column grid */}
+          {/* Remaining projects — tight grid */}
           {rest.length > 0 && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-0">
               {rest.map((project) => (
                 <Link
                   key={project.id}
                   id={`project-${project.slug}`}
                   href={`/${lang}/programs`}
-                  className="group relative block overflow-hidden aspect-video"
+                  className="group relative block overflow-hidden aspect-video border-4 border-black"
                 >
                   {project.cover_image_url && (
                     <img
                       src={project.cover_image_url}
                       alt={project.title}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                      className="absolute inset-0 w-full h-full object-cover group-hover:opacity-50"
                       loading="lazy"
                     />
                   )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                  <div className="absolute bottom-0 left-0 p-5">
-                    <h3 className="text-lg sm:text-xl font-light text-white">
+                  <div className="absolute bottom-0 left-0 right-0 bg-black p-4">
+                    <h3 className="text-lg sm:text-xl font-black text-white uppercase">
                       {project.title}
                     </h3>
-                    <p className="mt-1 text-xs text-white/40">
+                    <p className="mt-1 text-sm text-accent font-bold uppercase tracking-widest">
                       {project.category}
                     </p>
                   </div>
@@ -145,15 +140,15 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* Philosophy */}
-      <section className="py-16 px-6">
+      {/* Philosophy — black bg contrast block */}
+      <section className="py-20 px-6 bg-black text-white">
         <div className="max-w-7xl mx-auto">
-          <div className="border-t border-white/10 pt-12">
-            <div className="max-w-2xl mx-auto text-center">
-              <h2 className="text-xs uppercase tracking-[0.2em] text-muted mb-6">
+          <div className="border-t-4 border-white pt-12">
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-xl uppercase tracking-[0.3em] text-accent font-black mb-8">
                 {dict.home.philosophy.title}
               </h2>
-              <p className="text-xl sm:text-2xl font-light leading-relaxed text-foreground/80">
+              <p className="text-3xl sm:text-4xl font-black leading-tight text-white uppercase">
                 {dict.home.philosophy.description}
               </p>
             </div>
@@ -161,15 +156,15 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* Contact CTA */}
-      <section className="bg-surface py-16 px-6">
+      {/* Contact CTA — red accent block */}
+      <section className="border-t-4 border-black py-20 px-6 bg-accent text-white">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-4xl font-light tracking-tight text-foreground">
+          <h2 className="text-4xl sm:text-6xl font-black uppercase tracking-tight text-white">
             {dict.home.contact.heading}
           </h2>
           <Link
             href={`/${lang}/contact`}
-            className="inline-block mt-8 px-8 py-3 text-sm border border-white/30 text-white hover:bg-white hover:text-black transition-all rounded"
+            className="inline-block mt-8 px-12 py-4 text-lg font-black uppercase tracking-widest border-4 border-white text-white bg-transparent hover:bg-white hover:text-accent"
           >
             {dict.home.contact.cta}
           </Link>

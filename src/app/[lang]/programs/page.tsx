@@ -11,21 +11,26 @@ export default async function ProgramsPage({
   const dict = await getDictionary(lang);
 
   return (
-    <div className="py-20 px-6">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-4">{dict.programs.title}</h1>
-        <p className="text-lg text-slate-600 mb-12">
+    <div className="pt-32 pb-20 px-6">
+      <div className="max-w-5xl mx-auto">
+        <h1 className="text-6xl sm:text-8xl font-black uppercase tracking-tight mb-4 leading-none">
+          {dict.programs.title}
+        </h1>
+        <p className="text-lg text-black font-bold mb-12 uppercase tracking-wide">
           {dict.programs.description}
         </p>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-0 sm:grid-cols-2 lg:grid-cols-3">
           {dict.programs.list.map((program, i) => (
             <div
               key={i}
-              className="rounded-xl border border-slate-200 p-6 hover:shadow-lg transition-shadow"
+              className="border-4 border-black p-8 hover:bg-black hover:text-white group"
             >
-              <h3 className="text-xl font-semibold mb-3">{program.title}</h3>
-              <p className="text-slate-600">{program.description}</p>
+              <span className="text-sm font-bold text-accent group-hover:text-accent tracking-widest">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <h3 className="text-2xl font-black uppercase mt-2 mb-4">{program.title}</h3>
+              <p className="text-base leading-relaxed">{program.description}</p>
             </div>
           ))}
         </div>

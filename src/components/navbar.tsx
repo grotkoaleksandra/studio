@@ -80,7 +80,7 @@ export function Navbar({ dict, lang }: { dict: Dictionary; lang: Locale }) {
       const el = document.getElementById(`project-${slug}`);
       if (el) {
         const y = el.getBoundingClientRect().top + window.scrollY - 80;
-        window.scrollTo({ top: y, behavior: "smooth" });
+        window.scrollTo({ top: y });
       }
     }, 100);
   }, []);
@@ -100,28 +100,28 @@ export function Navbar({ dict, lang }: { dict: Dictionary; lang: Locale }) {
 
   return (
     <>
-      {/* A24-style sticky transparent header */}
-      <nav className="fixed top-0 w-full z-50 bg-transparent">
+      {/* Brutalist sticky header */}
+      <nav className="fixed top-0 w-full z-50 bg-white border-b-4 border-black">
         <div className="w-full px-6 sm:px-10 flex items-center justify-between h-16">
           {/* Left — Menu icon trigger */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="relative z-[60] flex items-center text-white hover:opacity-70 transition-opacity"
+            className="relative z-[60] flex items-center text-black hover:text-accent"
             aria-label="Toggle menu"
           >
             <div className="w-7 h-5 flex flex-col justify-between">
               <span
-                className={`block h-[2px] bg-white transition-all duration-300 origin-center ${
+                className={`block h-[3px] bg-current origin-center ${
                   menuOpen ? "rotate-45 translate-y-[9px]" : ""
                 }`}
               />
               <span
-                className={`block h-[2px] bg-white transition-all duration-300 ${
-                  menuOpen ? "opacity-0 scale-x-0" : ""
+                className={`block h-[3px] bg-current ${
+                  menuOpen ? "opacity-0" : ""
                 }`}
               />
               <span
-                className={`block h-[2px] bg-white transition-all duration-300 origin-center ${
+                className={`block h-[3px] bg-current origin-center ${
                   menuOpen ? "-rotate-45 -translate-y-[9px]" : ""
                 }`}
               />
@@ -131,7 +131,7 @@ export function Navbar({ dict, lang }: { dict: Dictionary; lang: Locale }) {
           {/* Center — Logo */}
           <Link
             href={`/${lang}`}
-            className="absolute left-1/2 -translate-x-1/2 text-xl font-semibold tracking-widest uppercase text-white z-[60]"
+            className="absolute left-1/2 -translate-x-1/2 text-2xl font-black tracking-[0.3em] uppercase text-black z-[60]"
           >
             {dict.metadata.title}
           </Link>
@@ -143,26 +143,18 @@ export function Navbar({ dict, lang }: { dict: Dictionary; lang: Locale }) {
         </div>
       </nav>
 
-      {/* Full-screen overlay menu */}
+      {/* Full-screen overlay menu — instant show/hide */}
       <div
-        className={`fixed inset-0 z-40 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-          menuOpen
-            ? "opacity-100 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
+        className={`fixed inset-0 z-40 bg-white ${
+          menuOpen ? "block" : "hidden"
         }`}
       >
-        <div
-          className={`absolute inset-0 bg-black transition-all duration-700 ${
-            menuOpen ? "opacity-100" : "opacity-0"
-          }`}
-        />
-
         <div className="relative z-10 h-full overflow-y-auto pt-24 pb-12 px-6 sm:px-10">
           <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-16 sm:gap-24">
             {/* Left column — Projects */}
             {projects.length > 0 && (
               <div>
-                <p className="text-[11px] uppercase tracking-[0.2em] text-white/40 mb-8">
+                <p className="text-sm uppercase tracking-[0.3em] text-black font-black border-b-4 border-black pb-2 mb-6">
                   Projects
                 </p>
                 <div className="space-y-0">
@@ -174,15 +166,15 @@ export function Navbar({ dict, lang }: { dict: Dictionary; lang: Locale }) {
                           ? () => scrollToProject(project.slug)
                           : undefined
                       }
-                      className="w-full text-left group flex items-baseline gap-5 py-3 border-b border-white/5 hover:border-white/20 transition-all duration-300"
+                      className="w-full text-left group flex items-baseline gap-5 py-3 border-b-2 border-black hover:text-accent"
                     >
-                      <span className="text-[11px] text-white/25 font-mono tabular-nums">
+                      <span className="text-sm text-black font-black tabular-nums group-hover:text-accent">
                         {String(i + 1).padStart(2, "0")}
                       </span>
-                      <span className="text-2xl sm:text-3xl text-white/70 group-hover:text-white transition-colors duration-300 font-light tracking-tight">
+                      <span className="text-2xl sm:text-3xl text-black group-hover:text-accent font-black tracking-tight uppercase">
                         {project.title}
                       </span>
-                      <span className="text-[11px] text-white/25 ml-auto uppercase tracking-wider">
+                      <span className="text-sm text-accent ml-auto uppercase tracking-widest font-bold">
                         {project.category}
                       </span>
                     </button>
@@ -193,7 +185,7 @@ export function Navbar({ dict, lang }: { dict: Dictionary; lang: Locale }) {
 
             {/* Right column — Navigation + auth */}
             <div>
-              <p className="text-[11px] uppercase tracking-[0.2em] text-white/40 mb-8">
+              <p className="text-sm uppercase tracking-[0.3em] text-black font-black border-b-4 border-black pb-2 mb-6">
                 Navigation
               </p>
               <div className="space-y-0">
@@ -202,10 +194,10 @@ export function Navbar({ dict, lang }: { dict: Dictionary; lang: Locale }) {
                     key={link.href}
                     href={link.href}
                     onClick={() => setMenuOpen(false)}
-                    className={`block text-2xl sm:text-3xl font-light tracking-tight py-3 border-b border-white/5 transition-all duration-300 ${
+                    className={`block text-2xl sm:text-3xl font-black uppercase tracking-tight py-3 border-b-2 border-black ${
                       pathname === link.href
-                        ? "text-white"
-                        : "text-white/70 hover:text-white hover:border-white/20"
+                        ? "text-accent"
+                        : "text-black hover:text-accent"
                     }`}
                   >
                     {link.label}
@@ -213,14 +205,14 @@ export function Navbar({ dict, lang }: { dict: Dictionary; lang: Locale }) {
                 ))}
               </div>
 
-              <div className="mt-12 pt-8 border-t border-white/10">
+              <div className="mt-12 pt-8 border-t-4 border-black">
                 {!loading && (
                   <div>
                     {user ? (
                       <Link
                         href={`/${intranetLang}/intranet`}
                         onClick={() => setMenuOpen(false)}
-                        className="text-sm text-white/40 hover:text-white transition-colors uppercase tracking-wider"
+                        className="text-sm text-black hover:text-accent uppercase tracking-widest font-black"
                       >
                         {dict.nav.intranet}
                       </Link>
@@ -228,7 +220,7 @@ export function Navbar({ dict, lang }: { dict: Dictionary; lang: Locale }) {
                       <Link
                         href={`/${intranetLang}/signin`}
                         onClick={() => setMenuOpen(false)}
-                        className="text-sm text-white/40 hover:text-white transition-colors uppercase tracking-wider"
+                        className="text-sm text-black hover:text-accent uppercase tracking-widest font-black"
                       >
                         {dict.nav.signIn}
                       </Link>

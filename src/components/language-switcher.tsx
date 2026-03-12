@@ -20,8 +20,8 @@ export function LanguageSwitcher({ lang }: { lang: Locale }) {
           key={locale}
           href={getLocalePath(locale)}
           title={localeNames[locale]}
-          className={`text-xl leading-none p-1 rounded transition-opacity ${
-            locale === lang ? "opacity-100" : "opacity-50 hover:opacity-100"
+          className={`text-xl leading-none p-1 ${
+            locale === lang ? "opacity-100 border-b-2 border-black" : "opacity-40 hover:opacity-100"
           }`}
         >
           {localeFlags[locale]}

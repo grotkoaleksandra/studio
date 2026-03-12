@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Doto } from "next/font/google";
 import "./globals.css";
 
-const geist = Geist({
+const doto = Doto({
   subsets: ["latin"],
-  variable: "--font-geist",
+  variable: "--font-doto",
+  axes: ["ROND"],
 });
 
 export const metadata: Metadata = {
@@ -18,11 +19,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={geist.variable}>
-      <head>
-        {/* Add Google Fonts here if your locales need non-Latin scripts */}
-      </head>
-      <body className="min-h-screen flex flex-col antialiased bg-background text-foreground">
+    <html lang="en" className={doto.variable}>
+      <head />
+      <body className="min-h-screen flex flex-col bg-background text-foreground">
         {children}
       </body>
     </html>

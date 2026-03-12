@@ -23,9 +23,9 @@ export async function generateMetadata({
 }
 
 const fontFamilyMap: Record<Locale, string> = {
-  en: "var(--font-geist), sans-serif",
-  pl: "var(--font-geist), sans-serif",
-  ru: "var(--font-geist), sans-serif",
+  en: 'var(--font-doto), "Courier New", monospace',
+  pl: 'var(--font-doto), "Courier New", monospace',
+  ru: '"Courier New", monospace',
 };
 
 export default async function LangLayout({
